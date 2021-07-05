@@ -1,0 +1,86 @@
+2021-06-24 12:55:37,288 DEBUG flaskApp Thread-2 : {'param': {}, 'body': None}
+2021-06-24 12:55:37,374 DEBUG flaskApp Thread-2 : {
+  "departments": [
+    {
+      "deptCode": "CSE", 
+      "deptName": "Computer Science and Engineering", 
+      "id": 1
+    }, 
+    {
+      "deptCode": "ECE", 
+      "deptName": "Electrical And Communication", 
+      "id": 3
+    }, 
+    {
+      "deptCode": "IT", 
+      "deptName": "Information And Technology", 
+      "id": 4
+    }
+  ], 
+  "success": true
+}
+
+2021-06-24 12:55:54,807 DEBUG flaskApp Thread-3 : {'param': {}, 'body': None}
+2021-06-24 12:55:54,809 DEBUG flaskApp Thread-3 : {
+  "departments": [
+    {
+      "deptCode": "CSE", 
+      "deptName": "Computer Science and Engineering", 
+      "id": 1
+    }, 
+    {
+      "deptCode": "ECE", 
+      "deptName": "Electrical And Communication", 
+      "id": 3
+    }, 
+    {
+      "deptCode": "IT", 
+      "deptName": "Information And Technology", 
+      "id": 4
+    }
+  ], 
+  "success": true
+}
+
+2021-06-24 12:56:38,711 DEBUG flaskApp Thread-2 : {'param': {}, 'body': None}
+2021-06-24 12:56:38,811 DEBUG flaskApp Thread-2 : {
+  "departments": [
+    {
+      "deptCode": "CSE", 
+      "deptName": "Computer Science and Engineering", 
+      "id": 1
+    }, 
+    {
+      "deptCode": "ECE", 
+      "deptName": "Electrical And Communication", 
+      "id": 3
+    }, 
+    {
+      "deptCode": "IT", 
+      "deptName": "Information And Technology", 
+      "id": 4
+    }
+  ], 
+  "success": true
+}
+
+2021-06-24 12:57:54,581 DEBUG flaskApp Thread-3 : {'param': {}, 'body': {'deptName': 'Electrical and Electronics'}}
+2021-06-24 12:57:54,590 DEBUG flaskApp Thread-3 : {
+  "success": false
+}
+
+2021-06-24 12:59:07,591 DEBUG flaskApp Thread-2 : {'param': {}, 'body': {'deptName': 'Electrical and Electronics'}}
+2021-06-24 12:59:07,593 DEBUG flaskApp Thread-2 : {
+  "success": false
+}
+
+2021-06-24 12:59:23,605 DEBUG flaskApp Thread-3 : {'param': {}, 'body': {'deptCode': 'EEE', 'deptName': 'Electrical and Electronics'}}
+2021-06-24 12:59:23,825 DEBUG flaskApp Thread-3 : {
+  "student": {
+    "deptCode": "EEE", 
+    "deptName": "Electrical and Electronics", 
+    "id": 5
+  }, 
+  "success": true
+}
+

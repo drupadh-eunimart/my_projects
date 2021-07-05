@@ -1,0 +1,22 @@
+
+Request: POST /students at Thu Jun 10 2021 12:42:22 GMT+0530, IP: ::1, User Agent: PostmanRuntime/7.28.0
+Request Body:
+{
+	"rNo": "18CSE46",
+	"firstName": "abc",
+	"lastName": "xyz",
+	"dept": "CSE"
+}
+Response Body:
+{
+	"success": false,
+	"err": {
+		"code": "ER_DUP_ENTRY",
+		"errno": 1062,
+		"sqlMessage": "Duplicate entry '18CSE46' for key 'students.rNo'",
+		"sqlState": "23000",
+		"index": 0,
+		"sql": "insert into `STUDENTS` (`dept`, `firstName`, `lastName`, `rNo`) values ('CSE', 'abc', 'xyz', '18CSE46')"
+	}
+}
+Response: 200 53.277 ms 
