@@ -1,0 +1,104 @@
+{
+    "data": {
+        "name": "nodemongo.orders.post",
+        "event_type": "api_call",
+        "description": "Create Order",
+        "parameters": {
+            "properties": {
+                "host": {
+                    "ref": "config_data/vdezi_host"
+                },
+                "channel_id": {
+                    "ref": "outputs/initial_event/channel_id"
+                },
+                "account_id": {
+                    "ref": "outputs/initial_event/account_id"
+                },
+                "channel_type": {
+                    "default_value": "marketplace"
+                }
+            }
+        },
+        "request_configuration": {
+            "type": "single_request",
+            "inputs": {}
+        },
+        "outputs": {
+            "success": {
+                "properties":{
+                    "order": {
+                        "ref": "response/order"
+                    }
+                }
+            },
+            "error": {
+                "properties": {
+                    "error": {
+                        "ref": "response/error"
+                    }
+                }
+            }
+        },
+        "response": {
+            "conversion": {
+                "required": false,
+                "type": ""
+            },
+            "conditions": {
+                "success": {
+                    "fn::not_exists": [{
+                        "variable": {
+                            "ref": "response/order"
+                        }
+                    }]
+                },
+                "error": {}
+            }
+        },
+        "request": {
+            "type": "object",
+            "properties": {
+                "http_protocal": {
+                    "default_value": "https"
+                },
+                "host": {
+                    "ref": "parameters/host"
+                },
+                "path": {
+                    "default_value": "/orders"
+                },
+                "method": {
+                    "default_value": "POST"
+                },
+                "body": {
+                    "type": "object",
+                    "properties": {
+                        "orderId": {
+                            "ref": "body/orderId"
+                        },
+                        "buyerName":{
+                            "ref": "body/buyerName"
+                        },
+                        "mobile":{
+                            "ref": "body/mobile"
+                        },
+                        "email":{
+                            "ref": "body/email"
+                        },
+                        "products":{
+                            "ref": "body/products"
+                        }
+                    }
+                },
+                "headers": {
+                    "type": "object",
+                    "properties": {
+                        "Content-Type": {
+                            "default_value": "application/json"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
