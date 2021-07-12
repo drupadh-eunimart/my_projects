@@ -46,7 +46,7 @@
             },
             "conditions": {
                 "success": {
-                    "fn::not_exists": [{
+                    "fn::exists": [{
                         "variable": {
                             "ref": "response/order"
                         }
