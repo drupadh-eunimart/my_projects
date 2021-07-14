@@ -1,0 +1,86 @@
+{
+    "data": {
+        "name": "nodemongo2.orders.get",
+        "event_type": "api_call",
+        "description": "Get Order",
+        "parameters": {
+            "properties": {
+                "host": {
+                    "default_value": "localhost"
+                },
+                "order_id": {
+                    "default_value": 1
+                }
+            }
+        },
+        "request_configuration": {
+            "type": "single_request",
+            "inputs": {}
+        },
+        "outputs": {
+            "success": {
+                "properties":{
+                    "order": {
+                        "ref": "response/order"
+                    }
+                }
+            },
+            "error": {
+                "properties": {
+                    "error": {
+                        "ref": "response/error"
+                    }
+                }
+            }
+        },
+        "response": {
+            "conversion": {
+                "required": false,
+                "type": ""
+            },
+            "conditions": {
+                "success": {
+                    "fn::exists": [{
+                        "variable": {
+                            "ref": "response/order"
+                        }
+                    }]
+                },
+                "error": {}
+            }
+        },
+        "request": {
+            "type": "object",
+            "properties": {
+                "http_protocal": {
+                    "default_value": "https"
+                },
+                "host": {
+                    "ref": "parameters/host"
+                },
+                "path": {
+                    "default_value": "/orders"
+                },
+                "method": {
+                    "default_value": "GET"
+                },
+                "params": {
+                    "type": "object",
+                    "properties": {
+                        "orderId": {
+                            "ref": "parameters/orderId"
+                        }
+                    }
+                },
+                "headers": {
+                    "type": "object",
+                    "properties": {
+                        "Content-Type": {
+                            "default_value": "application/json"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
