@@ -1,0 +1,105 @@
+{
+    "data": {
+        "name": "opencart.orders.get",
+        "event_type": "api_call",
+        "description": "Get Order from Opencart",
+        "parameters": {
+            "properties": {
+                "host": {
+                    "default_value": ""
+                },
+                "order_id": {
+                    "default_value": 1
+                },
+                "token": {
+                    "default_value": "64a579879bda2dd409d8ec75e30aec96"
+                },
+                "route": {
+                    "default_value": "extension/api/v1/orders/getOrder"
+                }
+            }
+        },
+        "request_configuration": {
+            "type": "single_request",
+            "inputs": {}
+        },
+        "outputs": {
+            "success": {
+                "properties":{
+                    "order": {
+                        "ref": "response/data"
+                    }
+                }
+            },
+            "error": {
+                "properties": {
+                    "error": {
+                        "ref": "response/error"
+                    }
+                }
+            }
+        },
+        "response": {
+            "conversion": {
+                "required": false,
+                "type": ""
+            },
+            "conditions": {
+                "success": {
+                    "fn:exists": [{
+                        "data": {
+                            "ref": "response/data"
+                        }
+                    }]
+                },
+                "error": {}
+            }
+        },
+        "request": {
+            "type": "object",
+            "properties": {
+                "http_protocal": {
+                    "default_value": "https"
+                },
+                "host": {
+                    "ref": "parameters/host"
+                },
+                "path": {
+                    "type": "object",
+                    "properties": {
+                        "token": {
+                            "ref": "parameters/token"
+                        },
+                        "route": {
+                            "ref": "parameters/route"
+                        }
+                },
+                "method": {
+                    "default_value": "GET"
+                },
+                "params": {
+                    "type": "object",
+                    "properties": {
+                        "order_id": {
+                            "ref": "parameters/order_id"
+                        },
+                        "token": {
+                            "ref": "parameters/token"
+                        },
+                        "route": {
+                            "ref": "parameters/route"
+                        }
+                    }
+                },
+                "headers": {
+                    "type": "object",
+                    "properties": {
+                        "Content-Type": {
+                            "default_value": "application/json"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}}
