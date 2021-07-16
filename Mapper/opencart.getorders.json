@@ -82,12 +82,6 @@
                     "properties": {
                         "order_id": {
                             "ref": "parameters/order_id"
-                        },
-                        "token": {
-                            "ref": "parameters/token"
-                        },
-                        "route": {
-                            "ref": "parameters/route"
                         }
                     }
                 },
