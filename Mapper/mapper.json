@@ -1,0 +1,87 @@
+{
+    "data": {
+       "name": "orders_data_mapper",
+       "description": "Will Map Data of opencart with POST API",
+       "event_type": "data_mapping",
+       "parameters": {
+            "order_data": {
+                "ref": "https://opencarttesteuni.000webhostapp.com/index.php?token=64a579879bda2dd409d8ec75e30aec96&route=extension/api/v1/orders/getOrder&order_id=1"
+            }
+        }
+    },
+    "mapping": {
+        "conversion": {
+            "type": ""
+        },
+        "properties": {
+            "order": {
+                "properties": {
+                    "order_id": {
+                      "ref": "data/order_id",
+                      "operation": ""
+                    },
+                    "name": {
+                      "ref": "data/buyer_name",
+                      "operation": ""
+                    },
+                    "email": {
+                      "ref": "data/buyer_email",
+                      "operation": ""
+                    },
+                    "ordered": {
+                      "ref": "data/date_ordered",
+                      "operation": ""
+                    },
+                    "total_amount": {
+                      "ref": "data/total",
+                      "operation": ""
+                    },
+                    "payment_type": {
+                      "ref": "data/payment/payment_method",
+                      "operation": ""
+                    },
+                    "products": {
+                      "loop_ref": "data/products",
+                      "properties": {
+                         "name": {
+                            "ref": "name",
+                            "operation": ""
+                         },
+                         "price": {
+                            "ref": "price",
+                            "operation": ""
+                         },
+                         "quantity": {
+                            "ref": "quantity",
+                            "operation": ""
+                         },
+                         "item_total": {
+                            "ref": "item_total",
+                            "operation": ""
+                         }
+                      }
+                    }
+                }
+            }
+        }
+    },
+    "outputs": {
+        "success": {
+            "properties": {
+                "mapped_data": {
+                    "ref": "mapping"
+                }
+            }
+        },
+        "error": {
+            "properties": {
+                "error_code": {
+                   "ref": "error_code"
+                },
+                "error_message": {
+                   "default_value": ""
+                }
+            }
+        }
+    }
+}

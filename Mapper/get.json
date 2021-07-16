@@ -1,0 +1,64 @@
+{
+    "Status": true,
+    "data": {
+        "order_id": "1",
+        "buyer_name": "billu",
+        "buyer_email": "leo@messi.com",
+        "date_ordered": "2021-06-23 08:20:29",
+        "total": "205.0000",
+        "comment": "",
+        "tracking": "testing213",
+        "No of items": 2,
+        "products": [
+            {
+                "name": "iPod Classic",
+                "product_id": "48",
+                "order_item_id": "1",
+                "price": "100.0000",
+                "quantity": "1",
+                "item_total": 100
+            },
+            {
+                "name": "iPod Classic",
+                "product_id": "48",
+                "order_item_id": "2",
+                "price": "100.0000",
+                "quantity": "1",
+                "item_total": 100
+            }
+        ],
+        "shipping": {
+            "shipping_firstname": "billu",
+            "shipping_lastname": "kn",
+            "shipping_company": "ny",
+            "shipping_address_1": "kfvbn",
+            "shipping_city": "hjfg",
+            "shipping_postcode": "986785",
+            "shipping_country": "Albania",
+            "shipping_country_id": "2",
+            "shipping_zone": "Kukes",
+            "shipping_zone_id": "50",
+            "shipping_address_format": "",
+            "shipping_custom_field": "[]",
+            "shipping_method": "Flat Shipping Rate",
+            "shipping_code": "flat.flat"
+        },
+        "payment": {
+            "payment_firstname": "billu",
+            "payment_lastname": "kn",
+            "payment_company": "ny",
+            "payment_address_1": "1/104",
+            "payment_address_2": "kfvbn",
+            "payment_city": "hjfg",
+            "payment_postcode": "986785",
+            "payment_country": "Albania",
+            "payment_country_id": "2",
+            "payment_zone": "Kukes",
+            "payment_zone_id": "50",
+            "payment_address_format": "",
+            "payment_custom_field": "[]",
+            "payment_method": "Cash On Delivery",
+            "payment_code": "cod"
+        }
+    }
+}
