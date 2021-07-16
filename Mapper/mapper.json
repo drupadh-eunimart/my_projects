@@ -4,8 +4,26 @@
        "description": "Will Map Data of opencart with POST API",
        "event_type": "data_mapping",
        "parameters": {
-            "order_data": {
-                "ref": "opencart.getOrders"
+            "order_id": {
+                "ref": "opencart.getOrders/order_id"
+            },
+            "buyer_name": {
+                "ref": "opencart.getOrders/buyer_name"
+            },
+            "buyer_email": {
+                "ref": "opencart.getOrders/buyer_email"
+            },
+            "date_ordered": {
+                "ref": "opencart.getOrders/date_ordered"
+            },
+            "total": {
+                "ref": "opencart.getOrders/total"
+            },
+            "payment_method": {
+                "ref": "opencart.getOrders/payment/payment_method"
+            },
+            "products": {
+                "ref": "opencart.getOrders/products"
             }
         }
     },
@@ -37,7 +55,7 @@
                       "operation": ""
                     },
                     "payment_type": {
-                      "ref": "payment/payment_method",
+                      "ref": "payment_method",
                       "operation": ""
                     },
                     "products": {
